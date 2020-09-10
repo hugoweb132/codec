@@ -1,0 +1,81 @@
+@media screen and (max-width: 1057px){
+    .main-header{
+        .menu-icon{
+            display: block;
+
+            &__line{
+                animation: closedMid 0.8s backwards;
+                animation-duration: reverse;
+
+                &::before{
+                    animation: closedTop 0.8s backwards;
+                    animation-direction: reverse;
+                }
+                &::after{
+                    animation: closedBtm 0.8s backwards;
+                    animation-direction: reverse;
+                }
+            }
+        }
+        .nav-links{
+           position: absolute;
+           top: 0;
+           left: 0;
+           opacity: 0;
+           flex-direction: column;
+           justify-content: space-evenly;
+           align-items: center;
+           padding: 10rem 0;
+           width: 100vw;
+           height: 100vh;
+           color: white;
+           background: black; 
+           font-size: 1.4rem;
+            transition: 
+                opacity .8s .5s,
+                clip-path 1s .5s;
+           clip-path: circle(200px at top right);
+        }
+
+        .menu-btn:checked ~ .nav-links{
+           opacity: 1;
+           clip-path: circle(100% at center);
+        }
+        .menu-btn:checked ~ .menu-icon{
+            border-radius: 50%;
+            animation: pulse 1s;
+            
+            .menu-icon__line{
+                background: #fff;
+                animation: openMid 0.8s forwards;
+
+                &::before{
+                    background: #fff;
+                    animation: openTop 0.8s forwards;
+                }
+                &::after{
+                    background: #fff;
+                    animation: openBtm 0.8s forwards;
+                }
+            }
+        }
+        .bubble{
+            display: none;
+        }
+
+        .glowing-box, .glowing-box1, .glowing-box2{
+            border-radius: 20px;
+            transition: 0.4s ease-in-out;
+        }
+
+        .glowing-box:hover{
+            box-shadow: 0px 0px 3px rgba($color: #ffdb11, $alpha: 1.0), 0px 0px 7px rgba($color: #ffdb11, $alpha: 1.0), 0px 0px 10px rgba($color: #ffdb11, $alpha: 1.0);
+        }
+        .glowing-box1:hover{
+            box-shadow: 0px 0px 3px rgba($color: #11bcff, $alpha: 1.0), 0px 0px 7px rgba($color: #11bcff, $alpha: 1.0), 0px 0px 10px rgba($color: #11bcff, $alpha: 1.0);
+        }
+        .glowing-box2:hover{
+            box-shadow: 0px 0px 3px rgba($color: #c9a8cc, $alpha: 1.0), 0px 0px 7px rgba($color: #c9a8cc, $alpha: 1.0), 0px 0px 10px rgba($color: #c9a8cc, $alpha: 1.0);
+        }
+    }
+}
